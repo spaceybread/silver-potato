@@ -11,12 +11,14 @@ def run_fuzzy_test(n, trials=1000):
     nor_results = []
 
     for _ in range(trials):
-        arr = random.sample(range(n), n)  # Generate random permutation
+        arr = random.sample(range(n * n), n)  # Generate random permutation
         _, flips_naive = sort(arr[:])  # Implement naive sorting
         _, flips_lds = sort_lds(arr[:])  # Implement LDS sorting
         _, flips_lop = sort_lop(arr[:])  # Your LOP
         flips_nor = sort_norm(arr[:])
 
+        if _ != sorted(arr[:]): break
+        
         naive_results.append(flips_naive)
         lds_results.append(flips_lds)
         lop_results.append(flips_lop)
