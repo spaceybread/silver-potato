@@ -33,4 +33,4 @@ def sort(arr):
 
     return arr, fc
 
-print(sort(arr), sort(arr) == sol)
+# print(sort(arr), sort(arr) == sol)
